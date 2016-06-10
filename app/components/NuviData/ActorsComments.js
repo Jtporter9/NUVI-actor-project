@@ -1,6 +1,14 @@
 import React from 'react'
 
 class ActorsComments extends React.Component {
+  handleSubmit(){
+    const newComment = this.commentRef.value;
+    this.commentRef.value = '';
+    this.props.AddComment(newComment)
+  }
+  setRef(ref){
+    this.commentRef = ref;
+  }
   render(){
     var comments = this.props.comments.map(function(comment, index) {
       return   <li className="list-group-item" key={index}>
@@ -14,8 +22,8 @@ class ActorsComments extends React.Component {
               {comments}
               <div className="list-group-item">
                 <big>Add a new comment below:</big>
-                <input type="text" className="form-control btn-block" placeholder="type comment here.."/>
-                <button type="submit" className="btn btn-block btn-primary">Send</button>
+                <input type="text" className="form-control btn-block" placeholder="type comment here.." ref={(ref) => this.setRef(ref)}/>
+                <button type="submit" className="btn btn-block btn-primary" onClick={this.handleSubmit.bind(this)}>Send</button>
               </div>
           </ul>
       </div>
@@ -25,7 +33,8 @@ class ActorsComments extends React.Component {
 
 ActorsComments.propTypes = {
   name: React.PropTypes.string.isRequired,
-  comments: React.PropTypes.array.isRequired
+  comments: React.PropTypes.array.isRequired,
+  AddComment: React.PropTypes.func.isRequired
 }
 
 export default ActorsComments

@@ -28,8 +28,10 @@ init(name) {
     })
   }.bind(this))
 }
-handleSubmitComment() {
-  // will add comment to actors comment
+handleSubmitComment(newComment) {
+  this.setState({
+    comments: comments.push(newComment), //most likely not right :)
+  })
 }
 handleAddLike() {
   this.setState({
@@ -46,7 +48,7 @@ handleAddLike() {
             <UserProfile AddLike={this.handleAddLike} name={this.props.params.name} bio={this.state.bio} likes={this.state.likes} />
           </div>
           <div className="col-md-8">
-            <ActorsComments bio={this.state.bio} comments={this.state.comments} name={this.props.params.name} />
+            <ActorsComments AddComment={this.handleSubmitComment} bio={this.state.bio} comments={this.state.comments} name={this.props.params.name} />
           </div>
 
         </div>
