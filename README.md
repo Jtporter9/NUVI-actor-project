@@ -1,6 +1,7 @@
 This is a project to apply for NUVI social marketing suite.
 
 ## NUVI instructions
+Part of our business is visualizing and interacting with social media activities, such as tweets, Facebook posts, and Instagram posts.
 
 Getting Started
 Your project is to write a browser UI that displays these activities and allows you to interact with the "actors" of these activities, such as liking or replying to these "actor
@@ -24,3 +25,4 @@ Manually write an HTTP request to get the JSON data at the endpoint in a plain t
 1. $ npm install
 2. $ webpack -w
 3. open index.html (found in public folder)
+4. Enjoy :)
