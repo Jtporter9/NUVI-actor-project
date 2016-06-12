@@ -1,7 +1,6 @@
 import React from 'react'
 import UserProfile from './NuviData/UserProfile';
 import ActorsComments from './NuviData/ActorsComments';
-// import getActorInfo from '../utils/helpers';
 var helpers = require('../utils/helpers');
 
 class Profile extends React.Component {
@@ -9,7 +8,7 @@ class Profile extends React.Component {
   super(props);
   this.state = {
     bio: {},
-    comments: ['React is fun', 'More fun than Angular'],
+    comments: ['These are fake comments, please feel free to add some to this actor.','React is fun', 'More fun than Angular'],
     likes: 0,
   }
 }
@@ -29,8 +28,10 @@ init(name) {
   }.bind(this))
 }
 handleSubmitComment(newComment) {
+  var newArray = this.state.comments.slice();
+  newArray.push(newComment);
   this.setState({
-    comments: comments.push(newComment), //most likely not right :)
+    comments: newArray,
   })
 }
 handleAddLike() {
@@ -40,6 +41,7 @@ handleAddLike() {
 }
   render(){
     this.handleAddLike = this.handleAddLike.bind(this);
+    this.handleSubmitComment = this.handleSubmitComment.bind(this);
     return (
       <div>
         <div className="row">

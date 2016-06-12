@@ -4,7 +4,7 @@ class ActorsComments extends React.Component {
   handleSubmit(){
     const newComment = this.commentRef.value;
     this.commentRef.value = '';
-    this.props.AddComment(newComment)
+    this.props.AddComment(newComment);
   }
   setRef(ref){
     this.commentRef = ref;
@@ -12,8 +12,7 @@ class ActorsComments extends React.Component {
   render(){
     var comments = this.props.comments.map(function(comment, index) {
       return   <li className="list-group-item" key={index}>
-        <p>{comment}</p>
-              </li>
+        <p>{comment}</p></li>
     })
     return (
       <div>
@@ -22,8 +21,10 @@ class ActorsComments extends React.Component {
               {comments}
               <div className="list-group-item">
                 <big>Add a new comment below:</big>
-                <input type="text" className="form-control btn-block" placeholder="type comment here.." ref={(ref) => this.setRef(ref)}/>
-                <button type="submit" className="btn btn-block btn-primary" onClick={this.handleSubmit.bind(this)}>Send</button>
+                <form action="">
+                  <input type="text" className="form-control btn-block" placeholder="type comment here.." ref={(ref) => this.setRef(ref)}/>
+                  <button type="submit" className="btn btn-block btn-primary" onClick={this.handleSubmit.bind(this)}>Send</button>
+                </form>
               </div>
           </ul>
       </div>
