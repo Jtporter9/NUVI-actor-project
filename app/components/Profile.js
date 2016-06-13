@@ -1,6 +1,7 @@
 import React from 'react'
 import UserProfile from './NuviData/UserProfile';
 import ActorsComments from './NuviData/ActorsComments';
+import ActivityInfo from './NuviData/ActivityInfo'
 var helpers = require('../utils/helpers');
 
 class Profile extends React.Component {
@@ -8,8 +9,9 @@ class Profile extends React.Component {
   super(props);
   this.state = {
     bio: {},
-    comments: ['These are fake comments, please feel free to add some to this actor.','React is fun', 'More fun than Angular'],
+    comments: [],
     likes: 0,
+    commentsCount: 0,
   }
 }
 componentDidMount(){
@@ -23,7 +25,8 @@ init(name) {
   .then(function(data) {
     this.setState({
       bio: data.bio,
-      likes: data.bio.activity_likes
+      likes: data.bio.activity_likes,
+      commentsCount: data.bio.activity_comments,
     })
   }.bind(this))
 }
@@ -32,6 +35,7 @@ handleSubmitComment(newComment) {
   newArray.push(newComment);
   this.setState({
     comments: newArray,
+    commentsCount: this.state.commentsCount + 1
   })
 }
 handleAddLike() {
@@ -47,12 +51,26 @@ handleAddLike() {
         <div className="row">
 
           <div className="col-md-4">
-            <UserProfile AddLike={this.handleAddLike} name={this.props.params.name} bio={this.state.bio} likes={this.state.likes} />
-          </div>
-          <div className="col-md-8">
-            <ActorsComments AddComment={this.handleSubmitComment} bio={this.state.bio} comments={this.state.comments} name={this.props.params.name} />
+            <UserProfile
+              name={this.props.params.name}
+              bio={this.state.bio} />
           </div>
 
+          <div className="col-md-4">
+            <ActivityInfo
+               commentsCount={this.state.commentsCount}
+                AddLike={this.handleAddLike}
+                likes={this.state.likes}
+                bio={this.state.bio} />
+          </div>
+
+          <div className="col-md-4">
+            <ActorsComments
+              AddComment={this.handleSubmitComment}
+              bio={this.state.bio}
+              comments={this.state.comments}
+              name={this.props.params.name} />
+          </div>
         </div>
       </div>
     )

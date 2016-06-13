@@ -18,6 +18,7 @@ class ActorsComments extends React.Component {
       <div>
         <div className="list-group-item"><h4>Comments made to {this.props.bio.actor_name}</h4></div>
           <ul className="list-group">
+            <li className="list-group-item">Please feel free to add some comments to this actor.</li>
               {comments}
               <div className="list-group-item">
                 <big>Add a new comment below:</big>
