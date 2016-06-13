@@ -2,7 +2,7 @@ import React from 'react'
 import UserProfile from './NuviData/UserProfile';
 import ActorsComments from './NuviData/ActorsComments';
 import ActivityInfo from './NuviData/ActivityInfo'
-var helpers = require('../utils/helpers');
+const helpers = require('../utils/helpers');
 
 class Profile extends React.Component {
   constructor(props){
@@ -35,7 +35,7 @@ handleSubmitComment(newComment) {
   newArray.push(newComment);
   this.setState({
     comments: newArray,
-    commentsCount: this.state.commentsCount + 1
+    // commentsCount: this.state.commentsCount + 1
   })
 }
 handleAddLike() {
@@ -71,6 +71,7 @@ handleAddLike() {
               comments={this.state.comments}
               name={this.props.params.name} />
           </div>
+
         </div>
       </div>
     )

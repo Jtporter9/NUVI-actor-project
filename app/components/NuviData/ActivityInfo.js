@@ -4,7 +4,7 @@ class ActivityInfo extends React.Component {
   render(){
     return (
       <div>
-        <li className="list-group-item"><h4>Activity Info</h4></li>
+        <h4>Activity Info</h4>
         <li className="list-group-item">Provider: {this.props.bio.provider}</li>
         <li className="list-group-item">Date: {this.props.bio.activity_date}</li>
         <li className="list-group-item">Message: {this.props.bio.activity_message}</li>
