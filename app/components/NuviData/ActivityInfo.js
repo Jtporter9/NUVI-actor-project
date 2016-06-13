@@ -4,17 +4,13 @@ class ActivityInfo extends React.Component {
   render(){
     return (
       <div>
-        <li className="list-group-item">
-          <h4>Activity Info</h4>
-            <i class="fa fa-long-arrow-down" aria-hidden="true"></i>
-            (scroll down for more data)
-        </li>
+        <li className="list-group-item"><h4>Activity Info</h4></li>
         <li className="list-group-item">Provider: {this.props.bio.provider}</li>
         <li className="list-group-item">Date: {this.props.bio.activity_date}</li>
         <li className="list-group-item">Message: {this.props.bio.activity_message}</li>
         <li className="list-group-item">Shares: {this.props.bio.activity_shares}</li>
         <li className="list-group-item">Likes: {this.props.likes}
-          <button type="submit" onClick={this.props.AddLike} className="btn btn-block btn-primary">
+          <button style={{marginLeft:"40%"}} type="submit" onClick={this.props.AddLike} className="btn btn-primary">
             Like this actor <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
           </button>
         </li>
