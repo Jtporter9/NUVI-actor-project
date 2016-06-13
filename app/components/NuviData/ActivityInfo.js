@@ -21,7 +21,7 @@ class ActivityInfo extends React.Component {
         <li className="list-group-item">Comments: {this.props.commentsCount}</li>
         <li className="list-group-item">Sentiment: {this.props.bio.activity_sentiment}</li>
         <li className="list-group-item">
-          Image with message: (if posted with one.)
+          Image with message: (if avaliable)
             <img className="img-rounded img-responsive" style={{border:"1px solid black",}} src={this.props.bio.activity_message} alt=""/>
         </li>
       </div>
