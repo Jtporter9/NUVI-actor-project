@@ -25,6 +25,7 @@ class Home extends React.Component {
         <li>2425816379</li>
         <li>1790082197</li>
         <li>5133874291</li>
+        <li>Or try one of your own.</li>
 
         <h2>Enjoy!</h2>
         <h2>Feel free to add likes to actors, and leave them comments.</h2>
