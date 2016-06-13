@@ -69,7 +69,8 @@ handleAddLike() {
               AddComment={this.handleSubmitComment}
               bio={this.state.bio}
               comments={this.state.comments}
-              name={this.props.params.name} />
+              name={this.props.params.name}
+              likes={this.state.likes} />
           </div>
 
         </div>

@@ -11,7 +11,7 @@ class ActivityInfo extends React.Component {
         <li className="list-group-item">Shares: {this.props.bio.activity_shares}</li>
         <li className="list-group-item">Likes: {this.props.likes}
           <button style={{marginLeft:"40%"}} type="submit" onClick={this.props.AddLike} className="btn btn-primary">
-            Like this actor <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
+            Add a Like <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
           </button>
         </li>
         <li className="list-group-item">Comments: {this.props.commentsCount}</li>
