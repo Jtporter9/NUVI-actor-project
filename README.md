@@ -1,11 +1,11 @@
-## instructions to view (for NUVI)
+## Instructions to view (for NUVI)
 
 1. $ npm install
 2. $ webpack -w
 3. open index.html (found in public folder)
 4. Enjoy :)
 
-## Side notes on project
+## *Comments and side notes for NUVI on project*
 
 1. I did the project in ReactJS because I saw that you guys at NUVI use ReactJS (If I am not mistaken).
 
